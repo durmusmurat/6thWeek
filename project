@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+public class Butonlar : MonoBehaviour
+{
+    public GameObject panel;
+    public void Cikisbutonu()
+    {
+        print("oyundan cikildi");
+        Application.Quit(); 
+
+    }
+    public void YeniOyun()
+    {
+        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene("NewGame");
+    }
+    public void IlkSahne()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+    public void On_Value_Changed(float deger)
+    {
+        print(deger);
+    }
+
+    public void ToggleEnabled (bool tiklandimi)
+    {
+        if(tiklandimi)
+        {
+            print("Ses Aktif");
+        }
+        else 
+        {
+            print("Ses Kapatıldı");
+        }
+    }
+    public void OnEndEditText (string metinseldeger)
+    {
+        print("metin: " + metinseldeger);
+    }
+    public void DropDownValue (int Sayi)
+    {
+        if (Sayi == 0)
+        {
+            print("Buying Car");
+        }
+        else if (Sayi == 1)
+        {
+            print("Buying Motorcycle");
+        }
+        else if (Sayi == 2)
+        {
+            print("Buying Bike");
+        }
+    }
+    public void oyunageridon ()
+    {
+        panel.gameObject.SetActive(false);
+    }
+    public Slider sl;
+    public TMP_Text TMMetin;
+    public Text text;
+    void Start()
+    {
+        TMMetin.text = "Merhaba Dünya";
+    }
+    void Update()
+    {
+        print(sl.value);
+        print(text.text);
+
+    }
+
+
+}
